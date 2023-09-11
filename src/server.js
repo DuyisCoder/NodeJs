@@ -1,7 +1,11 @@
 const express = require('express');
 const path=require('path');
 const app = express();
-const port = 3000
+
+// if want use file env we can install dotenv and init it
+require('dotenv').config();
+const port = process.env.PORT || 9090 // guard port is underfined
+const hostname=process.env.HOST_NAME
 
 app.get('/',(req,res)=>{
     res.send("Hello ");
