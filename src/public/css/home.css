@@ -60,3 +60,19 @@
   .group-input input{
     width: 100%;
   }
+  table, td, th {
+    border: 1px solid black;
+    height: 50px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    text-align: center;
+  }
+  .table-user{
+    padding: 20px 20px;
+  }

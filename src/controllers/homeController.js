@@ -8,17 +8,22 @@ const adminController = (req,res)=>{
 const userController = (req,res)=>{
     res.send("This is page user")
 }
-const postCreateUser =(req,res)=>{
-    let {email,name,city}=req.body;
-    connection.query(
-        `INSERT into Users(email,name,city)
-        VALUES (?,?,?)`,[email,name,city],
-        function(err,results){
-            console.log(results);
-        }
-        
-    )
-    res.send("Tạo thành công!!")
+const postCreateUser = async (req, res) => {
+        let { email, name, city } = req.body;
+        let [results, fields] = await connection.query(
+          `INSERT INTO Users(email, name, city) VALUES (?, ?, ?)`,
+          [email, name, city]
+        );
+        res.send("Tạo thành công!!");
+        console.log("Check kq:", results);
+      
+  };
+  
+const createaUser =(req,res)=>{
+    res.render('create.ejs')
+}
+const infoUser = (req,res)=>{
+    res.render('listUser.ejs')
 }
 
 module.exports={
@@ -26,4 +31,6 @@ module.exports={
     adminController,
     userController,
     postCreateUser,
+    createaUser,
+    infoUser
 }

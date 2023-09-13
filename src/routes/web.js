@@ -2,7 +2,9 @@ const {
     homeController,
     adminController,
     userController, 
-    postCreateUser
+    postCreateUser,
+    createaUser,
+    infoUser
 } =require('../controllers/homeController');
 const express=require('express');
 const router=express.Router();
@@ -10,6 +12,8 @@ const router=express.Router();
 router.get('/',homeController);
 router.get('/admin',adminController);
 router.get('/user',userController);
+router.get('/create-user',createaUser)
+router.get('/info-user',infoUser);
 
 router.post('/create-user', postCreateUser);
 
