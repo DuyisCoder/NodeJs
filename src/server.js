@@ -13,6 +13,9 @@ const hostname=process.env.HOST_NAME
 //config template ViewEngine
 configViewEngine(app);
 
+// config req.body
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
   
 app.use('/',WebRoutes);
