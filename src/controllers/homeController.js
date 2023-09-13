@@ -1,4 +1,4 @@
-
+const connection=require('../config/database')
 const homeController = (req,res)=>{
     return  res.render('home.ejs') ;
 }
@@ -9,8 +9,16 @@ const userController = (req,res)=>{
     res.send("This is page user")
 }
 const postCreateUser =(req,res)=>{
-    res.send("create new user")
-    console.log('req.body:',req.body)
+    let {email,name,city}=req.body;
+    connection.query(
+        `INSERT into Users(email,name,city)
+        VALUES (?,?,?)`,[email,name,city],
+        function(err,results){
+            console.log(results);
+        }
+        
+    )
+    res.send("Tạo thành công!!")
 }
 
 module.exports={
