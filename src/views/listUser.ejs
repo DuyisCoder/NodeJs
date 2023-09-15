@@ -12,7 +12,9 @@
         <a href="/info-user"  class="active">List User</a>
         <a href="#about">About</a>
       </div>
-      <h1 style="padding: 0 20px;">List User :</h1>
+      <h1 style="padding: 0 20px;">List User :
+        <%= JSON.stringify(listUser)  %>
+    </h1>
       <div class="table-user">
         <table>
             <tr>
@@ -20,30 +22,47 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>City</th>
+                <th>Action</th>
             </tr>
             <tr>
                 <td>Id</td>
                 <td>Email</td>
                 <td>Name</td>
                 <td>City</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>Id</td>
                 <td>Email</td>
                 <td>Name</td>
                 <td>City</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>Id</td>
                 <td>Email</td>
                 <td>Name</td>
                 <td>City</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>Id</td>
                 <td>Email</td>
                 <td>Name</td>
                 <td>City</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
             </tr>
             
         </table>
