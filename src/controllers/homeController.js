@@ -1,5 +1,9 @@
 const connection=require('../config/database')
-const {getAllUsers,getUserById} = require('../services/CRUDservice')
+const express=require('express');
+const app = express()
+
+
+const {getAllUsers,getUserById, updateUser} = require('../services/CRUDservice')
 const homeController = (req,res)=>{
     return  res.render('home.ejs') ;
 }
@@ -33,6 +37,20 @@ const getUpdateUser =async (req,res)=>{
     return res.render('edit.ejs',{user:user})
 
 }
+const postUpdateUser = async (req, res) => {
+    let { email, name, city, user } = req.body;
+    
+    // Gọi hàm updateUser để cập nhật thông tin người dùng (giả sử đây là hàm async)
+    try {
+        await updateUser(email, name, city, user);
+        setTimeout(() => {
+            res.redirect('/info-user');
+        }, 3000);
+    } catch (error) {
+        console.error('Lỗi khi cập nhật:', error);
+        res.status(500).send('Đã xảy ra lỗi khi cập nhật thông tin người dùng.');
+    }
+};
 
 module.exports={
     homeController,
@@ -41,5 +59,6 @@ module.exports={
     postCreateUser,
     createaUser,
     infoUser,
-    getUpdateUser
+    getUpdateUser,
+    postUpdateUser
 }

@@ -17,6 +17,10 @@
       <form action="/update-user" method="POST" post class="form-add-user">
         <fieldset>
             <legend>Update new User:</legend>
+            <div class="group-input" style="display: block;">
+                <label>Id:</label>
+                <input type="text" name="user" value="<%= user.id %>">
+        </div>
             <div class="group-input">
                     <label>Email:</label>
                     <input type="text" name="email" value="<%= user.email %>">
