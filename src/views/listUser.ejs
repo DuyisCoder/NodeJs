@@ -13,7 +13,7 @@
         <a href="#about">About</a>
       </div>
       <h1 style="padding: 0 20px;">List User :
-        <%= JSON.stringify(listUser)  %>
+        <!-- <%= JSON.stringify(listUser)  %> -->
     </h1>
       <div class="table-user">
         <table>
@@ -24,46 +24,18 @@
                 <th>City</th>
                 <th>Action</th>
             </tr>
+            <% for(let i=0 ;i<listUser.length;i++){ %>
             <tr>
-                <td>Id</td>
-                <td>Email</td>
-                <td>Name</td>
-                <td>City</td>
+                <td><%= listUser[i].id %></td>
+                <td><%= listUser[i].email %></td>
+                <td><%= listUser[i].name %></td>
+                <td><%= listUser[i].city %></td>
                 <td>
                     <button>Edit</button>
                     <button>Delete</button>
                 </td>
             </tr>
-            <tr>
-                <td>Id</td>
-                <td>Email</td>
-                <td>Name</td>
-                <td>City</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Id</td>
-                <td>Email</td>
-                <td>Name</td>
-                <td>City</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Id</td>
-                <td>Email</td>
-                <td>Name</td>
-                <td>City</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-            </tr>
+            <% } %>
             
         </table>
       </div>
